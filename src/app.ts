@@ -1,8 +1,13 @@
-interface ErrorContainer {
-  [prop: string]: string //Don't know which properties might be in the received object but Iknow they could be read as a string and their property value is a string
+type Combinable = string | number
+
+function add(a: number, b: number): number
+function add(a: string, b: string): string
+function add(a: Combinable, b: Combinable) {
+  if (typeof a === 'string' || typeof b === 'string')
+    return a.toString() + b.toString()
+  return a + b
 }
 
-const errorBag: ErrorContainer = {
-  email: 'Not a valid email',
-  username: 'Must start with a capital character',
-}
+const result = add('Mano', ' Fmz')
+
+result.split(' ')
