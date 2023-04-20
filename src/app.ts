@@ -1,7 +1,5 @@
-const fetchedUserData = {
-  id: 'u1',
-  name: 'Mano',
-  job: { title: 'CEO', description: 'My own company' }
-}
+const userInput = null
 
-console.log(fetchedUserData?.job?.title)
+const storedData = userInput ?? 'DEFAULT'
+
+console.log(storedData)
